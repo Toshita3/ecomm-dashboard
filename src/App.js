@@ -1,13 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'react-bootstrap'
+import Header from './Header'
+import Login from './Login'
+import Register from './Register'
+import AddProduct from './AddProduct'
+import UpdateProduct from './UpdateProduct'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h1>Ecomm Project</h1>
-      <button>Normal Button</button>
-      <Button>Bootstrap Button</Button>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/add' element={<AddProduct />} />
+          <Route path='/update' element={<UpdateProduct />} /> 
+
+          
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
